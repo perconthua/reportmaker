@@ -1,5 +1,5 @@
 reportmaker:
-  container_name: pechy
+  container_name: reportmaker
   labels:
     - "reportmaker-description= Report Generator (xlsx)"
   build: .
@@ -7,8 +7,8 @@ reportmaker:
     - "8000:8000"
   links:
     - code
-  #command: gunicorn -b 172.17.0.64:8000 manage:reportmaker.app
-  command: ping localhost
+  command: gunicorn -b 0.0.0.0:8000 manage:reportmaker.app
+  # command: ping localhost
   volumes_from: 
     - code
 

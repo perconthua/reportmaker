@@ -58,4 +58,6 @@ RUN pip install colander==1.0
 RUN pip install gunicorn==18.0
 WORKDIR /var/www/html/reportmaker
 
-CMD ["gunicorn -b 0.0.0.0:8000 manage:reportmaker.app"]
+# VOLUME ../.:/var/www/html/reportmaker
+
+# CMD ["gunicorn -b 0.0.0.0:8000 manage:reportmaker.app"]
