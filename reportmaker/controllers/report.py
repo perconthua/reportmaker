@@ -113,6 +113,10 @@ class report(object):
             worksheet.set_column(col, col, lengths[col])
 
         worksheet2 = workbook.add_worksheet('query')
-        worksheet2.write(0,0,query)
+        query_lines = query.splitlines()
+        i=0
+        for line in query_lines:
+            worksheet2.write(i,0,line)
+            i+=1
 
         workbook.close()
